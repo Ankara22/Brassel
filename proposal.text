@@ -1,0 +1,564 @@
+WEB BASED AUTOMATED PAYROLL SYSTEM
+
+By
+Bradley Juma Omondi – 157872
+&
+Russel Jamie Ongoro – 169177
+
+
+
+An Information Systems Project 1 Proposal Submitted to the School of Computing & Engineering Sciences in partial fulfilment of the requirements for the award of a Degree in Business Information Technology
+
+
+Strathmore University
+
+
+May, 2025
+
+ 
+Declaration and Approval
+
+
+We declare that this work has not been previously submitted and approved for the award of a degree by this or any other University. To the best of my knowledge and belief, the research proposal contains no material previously published or written by another person except where due reference is made in the research proposal itself.
+
+Student Names: Bradley Juma
+
+Sign: ________________________	Date: ________________________
+
+
+Student Names: Russel Jamie
+
+Sign: ________________________	Date: ________________________
+
+Supervisor’s Name: Cynthia Mkabane
+
+Sign: ________________________                               Date: ________________________
+ 
+                                                                        Table of contents
+
+ 
+Declaration and Approval	ii
+Table of contents	iii
+List of Figures	v
+List of abbreviations	vi
+Chapter 1: Introduction	1
+1.1	Background	1
+1.2	Problem Statement	1
+1.3	Aim	2
+1.4 Specific Objectives	2
+1.4	Research Questions	2
+1.6 Justification	2
+1.7 Scope	3
+1.8 Limitations	3
+1.9 Delimitations	3
+Chapter 2: Literature Review	4
+2.1 Introduction	4
+2.2 Limitations of existing automated payroll systems	4
+2.2.1 Poor User Experience	4
+2.2.2 Session Timeout Issues	4
+2.2.3 Inadequate Data Security and Privacy Measures	5
+2.3 Gaps in Existing Payroll Systems	5
+2.3.1 Adoption Challenges in Small Businesses	5
+2.3.2 Technological Advancements	5
+2.2.3 User Experience and Accessibility Challenges in Existing Systems	5
+2.4 Review of Existing Systems	6
+2.4.1 ADP (Automatic Data Processing)	6
+2.4.2 QuickBooks Payroll	7
+2.4.3 Sage Payroll	7
+2.5 Conceptual Framework	8
+Chapter 3: Research Methodology	10
+3.1 Introduction	10
+3.2 Research Approach	10
+3.3 Methodology	10
+3.3.1 Requirement Analysis	11
+3.3.2 System Design	11
+3.3.3 Implementation	12
+3.3.4 Testing	12
+3.3.5 Deployment	12
+3.3.6 Maintenance	12
+3.4 Deliverables	13
+3.4.1 System Modules	13
+3.4.2 Users modules	13
+3.4.3 Security and Authentication	13
+3.4.4 Overall System Architecture	14
+3.5 Ethical Considerations	14
+Chapter 4: System Analysis and Design	15
+4.1 Introduction	15
+4.2 Requirement Analysis	15
+4.2.1 Functional Requirements	15
+4.2.2 Non-Functional Requirements	17
+4.3: Diagrams	18
+4.3.1 Use-case diagram	18
+4.3.2 Class Diagram	19
+4.3.3 Entity Relationship Diagram	20
+4.3.4 Database Schema	21
+Chapter 5: Development and testing	22
+5.1 Introduction	22
+5.2 Setup Description	22
+5.2.1 Solution Set Up	23
+5.2.2 Stakeholder Interaction	23
+5.2.3 Challenges	24
+5.3 Testing	25
+5.3.1 Test Cases	26
+Chapter 6: Conclusions and Recommendations	28
+6.1 Conclusion	28
+6.2 Recommendations.	28
+Appendices.	29
+References	30
+
+
+
+
+
+
+
+
+
+
+
+List of Figures 
+ 
+Figure 2.4.1 ADP (Automated Data Processing)	6
+Figure 2.4.2 Quickbooks Payroll	7
+Figure 2.4.3 Sage Payroll	8
+Figure 4 Conceptual Diagram	9
+Figure 5 Sequential Development Process	11
+Figure 4.6.1 Use-case diagram	18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+List of Tables
+Table 4.2.1 Functional Requirements	15
+Table 4.2.2 Non-Functional Requirements	17
+Table 3 Stakeholder Interaction	23
+Table 4 Non-functional Requirements Implementation	24
+Table 5.3.1 Test Cases	26
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+List of abbreviations
+
+  CSS – Cascading Style Sheets
+  ERD – Entity Relationship Diagram
+  HTML – Hypertext Mark-up Language
+  MySQL – My Structured Query Language
+  OOAD – Object Oriented Analysis Design
+  PHP – Hypertext Pre-processor
+  SMEs – Small and Medium Enterprises
+ 
+Chapter 1: Introduction
+1.1	Background 
+
+Payroll management is a critical aspect of financial and human resource operations. In many organizations, it is still handled manually. This manual process is slow, inefficient, and prone to errors, leading to salary miscalculations, incorrect tax deductions, and delayed payments as highlighted by Ahmed (2023). These issues lead to dissatisfaction, demoralization, and even legal problems due to non-compliance with tax and Labor laws. Manual payroll processing also results in delayed allowance and deduction handling, increased human errors, inaccurate records, and slow report generation. If left unaddressed, these challenges can lower productivity, a concern also raised by Ahmed (2023). To address these inefficiencies, this project proposes a Web-Based Automated Payroll System with continuous session persistence and secure login authentication. It will integrate with HR and accounting systems and offer flexibility to fit various organizational structures.
+
+1.2	Problem Statement
+
+Most developing organizations still employ manual payroll procedures, which are time-consuming and prone to errors. These manual procedures result in late pay, incorrect tax and benefits, and a lack of accurate employee financial records. These inefficiencies not only lower productivity but also employee morale and can result in fines and penalties due to non-compliance with labour and tax laws. Despite the existence of digital payroll systems such as those developed by Ahmed et al. (2023) and Heart (2022), there remain some critical gaps that have yet to be solved. These include inadequate system integration features, security flaws in data, and user session timeouts that disrupt workflow. 
+
+1.3	Aim 
+To design a web-based payroll system for SME businesses or small income businesses
+1.4 Specific Objectives
+
+i.	To investigate the limitations of existing computerized payroll systems.
+ii.	To review existing literature and systems for automation of payroll for identifying gaps and areas of improvement.
+iii.	To develop an easy-to-use, secure, and customizable web-based payroll application. 
+iv.	To test and validate the system’s functionality.
+
+1.4	Research Questions
+i.	What are the key limitations and challenges faced by existing computerized payroll systems?
+
+ii.	What gaps and improvement areas are identified in the current literature and systems for payroll automation?
+iii.	How can a web-based payroll system be designed to ensure ease of use, security, and customization?
+iv.	How effective and reliable is the developed payroll system when tested under real-world scenarios?
+
+1.6 Justification
+This project is justified by the inefficiencies and errors commonly found in manual payroll processes(Aina & Odun-Ayo, 2025), especially in developing businesses. These manual methods often lead to salary miscalculations, tax errors, and delayed payments, which can harm employee morale and reduce productivity (Heart & Bolu, 2022; Adebayo, 2023). Existing digital payroll solutions are often too costly or complex for SMEs to adopt effectively (Ahmed et al., 2023; Fred, n.d.). Therefore, a cost-effective, secure, and user-friendly web-based payroll system is necessary. The proposed solution will enhance payroll accuracy, ensure timely payments, and improve operational efficiency (Hikmah & Muqorobin, 2020; Ahmed et al., 2023).
+1.7 Scope
+The proposed Web-Based Automated Payroll System will automate salary calculations, deductions, and tax processing to minimize human error and enhance efficiency. It will feature secure login, continuous session persistence, and a user-friendly interface to improve usability. It will support role-based access and generate accurate payroll reports. However, the scope excludes hardware procurement, mobile app development, non-payroll HR functions and large-scale business.
+
+1.8 Limitations
+The Web-Based Automated Payroll System presents several limitations that must be acknowledged. First, it is limited to web access, meaning it may not perform optimally on mobile devices unless specifically adapted for such platforms in future iterations. This could affect users who prefer accessing the system through smartphones or tablets. Additionally, as with all web-based platforms, the system is exposed to potential security risks such as cyberattacks and data breaches, requiring regular updates and strong cybersecurity measures to safeguard sensitive payroll data (Adebayo, 2023). Lastly, organizations may face challenges with adoption due to the need for training, as some staff members might be unfamiliar with digital payroll systems and require guidance to effectively use the platform (Adebayo, 2023).
+
+1.9 Delimitations
+The proposed Web-Based Automated Payroll System has a few defined delimitations that shape its development and usage boundaries. Firstly, the system is limited to web access and does not include a dedicated mobile application. However, this is addressed by ensuring the system remains fully accessible through mobile web browsers such as Chrome, allowing users to operate it from various devices. Secondly, while security risks are always a challenge in web-based platforms, the system mitigates these concerns by routine vulnerability testing. Lastly, recognizing that not all users may be familiar with digital payroll systems, the system includes well-prepared user manuals to ease the learning curve and ensure a smoother transition for new users.
+Chapter 2: Literature Review
+2.1 Introduction
+This chapter reviewed the limitations of existing computerized payroll systems, particularly within the SMEs context with reference to the text  (Automated Payroll Processing Software, n.d.) by Slyvester Heart and highlighted the persistent challenges such as poor user experience, inadequate security measures, and session timeout issues. It analysed the gaps in current payroll automation tools, including their high cost, limited accessibility, and difficulty in integration. Three examples of used payroll systems, ADP, QuickBooks Payroll, and Sage Payroll, were examined to illustrate effective features and remaining inefficiencies. Furthermore, a conceptual framework was developed to demonstrate how the proposed web-based automated payroll system would address these challenges by streamlining payroll processes and improving usability.
+
+2.2 Limitations of existing automated payroll systems
+Computerized payroll systems aim to enhance the efficiency and accuracy of salary processing. Nevertheless, numerous small and medium-sized enterprises (SMEs), particularly in developing areas such as Kenya, continue to face notable challenges when using these systems.
+2.2.1 Poor User Experience
+Payroll software used by some small businesses often features poorly designed user interfaces that are not intuitive or user-friendly. Users may struggle to navigate the system, leading to errors, inefficiencies, and delays in task completion. The lack of streamlined workflows increases the learning curve and reduces overall user satisfaction.
+2.2.2 Session Timeout Issues
+Many payroll systems frequently log users out due to short or rigid session timeouts. If a user remains idle for too long, such as during bulk salary entry, they may be forced to re-enter lost data. This not only wastes time but also causes frustration, as tasks often need to be restarted entirely. Such interruptions can significantly reduce productivity.
+2.2.3 Inadequate Data Security and Privacy Measures
+Data security is a significant concern for small businesses, especially those handling sensitive employee information. Many SMEs lack robust cybersecurity measures, making them vulnerable to data breaches. This lag in adopting security measures leaves a gap for theft of customer and employee personal information and transfer to third parties.
+
+2.3 Gaps in Existing Payroll Systems
+2.3.1 Adoption Challenges in Small Businesses
+Although payroll automation brings benefits such as speed, accuracy, and compliance, its adoption among small and medium-sized enterprises (SMEs) in Kenya is still limited. A major challenge is cost; many SMEs perceive digital systems as expensive and hard to maintain. Additionally, (Fred, n.d.) many SMEs have not adopted digital tools for data protection or staff training due to limited resources.
+2.3.2 Technological Advancements 
+Modern payroll systems have begun incorporating cloud computing, mobile access, and integration with HR and accounting platforms, (Wachanga, n.d.) However, integration remains a challenge for many Kenyan businesses. Addressing issues on costs of integrating automation tools, job displacement and data privacy ensures the successful adoption and integration of the system
+2.2.3 User Experience and Accessibility Challenges in Existing Systems
+While many existing payroll automation systems provide essential features like salary computation, tax processing, and reporting, a major shortfall lies in system accessibility, especially for non-technical users in small businesses. Moreover, certain systems do not offer user-friendly dashboards, easy-to-navigate interfaces, or clear error notifications, which makes them difficult for first-time users to learn and operate efficiently.
+
+2.4 Review of Existing Systems
+There are several existing automated payroll systems that have demonstrated effectiveness in managing employee compensation, earning high user satisfaction and strong adoption due to their efficiency, accuracy, and reliability. Some are:
+
+2.4.1 ADP (Automatic Data Processing)
+ADP is a cloud-based payroll and human capital management. It automates payroll processing by calculating employee wages, tax deductions, and contributions. Employers input employee details such as hours worked, salaries, and benefits, which the system uses to generate accurate payroll. Direct deposit and electronic payslip generation are built-in features. ADP provides a self-service portal for employees to view pay history, manage personal details, and access tax forms. It supports integration with other HR and accounting systems. Additionally, it offers advanced analytics and reporting features. ADP’s flexibility and scalability make it ideal for both small startups and multinational corporations.
+ 
+Figure 2.4.1 ADP (Automated Data Processing)
+2.4.2 QuickBooks Payroll
+QuickBooks Payroll is a payroll solution that works seamlessly with QuickBooks accounting software. It is designed primarily for small and medium-sized businesses. Employers enter employee pay details, such as salaries and hours worked, and the system calculates gross pay, deductions, and taxes automatically. It supports direct deposit, printed checks, and real-time tax rate updates. QuickBooks Payroll also automates the filing of payroll taxes and year-end forms like W-2s and 1099s. It includes features for tracking employee benefits, paid time off, and deductions. The system provides an employee portal for accessing payslips and tax documents. Users can run payroll as often as needed without extra charges in certain plans. Its dashboard offers real-time insights and reminders for compliance tasks. QuickBooks Payroll is particularly favoured for its ease of use and integration with financial bookkeeping.
+ 
+Figure 2.4.2 Quickbooks Payroll
+2.4.3 Sage Payroll
+Sage Payroll is a cloud-based solution that helps small and medium-sized businesses manage employee pay and tax calculations. It allows employers to enter pay data, and automatically calculates net pay, tax obligations, and contributions. Sage supports direct deposit and the generation of digital payslips. It includes built-in tools for managing statutory payments like sick pay and maternity leave. The platform offers employee self-service features for viewing payslips and updating personal data. It includes alerts and reminders to help users stay compliant with filing deadlines. Users can generate detailed reports on payroll history, deductions, and tax submissions. Sage’s structure is ideal for businesses looking for simplicity, reliability, and legal compliance in their payroll processes.
+ 
+Figure 2.4.3 Sage Payroll
+2.5 Conceptual Framework
+This is diagram illustrates how the users, administrators and the management will interact with the system. It will have a user interface where an employee will be required to log-in using their respective details. The administrator will be required to log in using the proper credentials as they will have been recorded by the system. Upon completion of payroll processing, a notification will confirm successful salary computation. Administrators will be responsible for managing allowances and deductions and registering new employees. Management will have access to payroll summaries and analytics to assist in decision-making. HR Officer will be responsible for inputting the worked hours and confirming the payroll calculations.
+
+ 
+Figure 4 Conceptual Diagram
+
+
+
+
+
+
+
+
+
+Chapter 3: Research Methodology
+
+3.1 Introduction
+This chapter outlines the methodology applied in the development of the proposed system. It details both functional and non-functional requirements to provide a clear understanding of the system’s foundation. The chapter also discusses the system’s intended outcomes, highlighting the specific features it aims to deliver. Furthermore, it presents the tools, technologies, and techniques employed to ensure successful implementation. 
+3.2 Research Approach
+Object-Oriented Analysis and Design (OOAD) is the most appropriate approach for the proposed payroll system. It allows various system roles such as employees, administrators, and salary processing functions to be modelled as distinct objects. This structure makes the system easier to understand, develop, and maintain. OOAD is also highly compatible with common web development tools and languages like PHP and JavaScript. Its object-based approach mirrors real-world elements, which improves clarity for both developers and users. 
+3.3 Methodology
+We are using the Waterfall/sequential development process as it provides a clear, structured approach that aligns well with the project’s requirements. This model allows each phase, requirements analysis, design, development/implementation, testing, deployment, and maintenance, to be completed one at a time, hence minimizing confusion. It is ideal this project where the scope is clearly defined early. Furthermore, its step-by-step nature makes it easier to manage and track progress within a defined timeframe.
+ 
+Figure 5 Sequential Development Process
+3.3.1 Requirement Analysis
+In this phase, both functional and non-functional requirements are collected. This involved conducting an in-depth literature review targeting HR personnel in small and medium-sized enterprises (SMEs). The focus is on identifying key challenges in salary computation, leave and attendance tracking, and generating ready payroll reports. Data collection instruments include structured questionnaires and open-ended interviews. These requirements guided the system scope, ensuring relevance to the real-world issues identified. 
+3.3.2 System Design
+The design phase transforms the requirements into a blueprint for development. OOAD will be used because it suits the structure of the payroll system i.e users, roles, and payroll processing naturally map to objects. Diagrams to be drawn include Use Case Diagrams, and Sequence Diagrams to represent system behaviour and interactions. Tools like Draw.io will be used due to their simplicity and visual clarity. Design deliverables will also include an ERD, and a database schema to structure data storage. The design defines user roles and workflows aligned to system functionality.
+3.3.3 Implementation
+The system will be a web-based payroll platform, enabling cross-platform access with no client-side installation. The front-end will be developed using HTML, CSS, and Bootstrap to ensure responsiveness and usability. The back-end will be developed using PHP for its compatibility with web hosting environments and MySQL as the database system for efficient storage and retrieval of structured data. The development environment will be Visual Studio Code, chosen for its lightweight setup, extensions, and debugging tools. 
+3.3.4 Testing
+Testing ensures system reliability and conformance to both functional and non-functional requirements. Tools such as XAMPP will be used to simulate test environments and monitor application behaviour. Black-box testing techniques will evaluate the system from the end-user’s perspective, while performance testing will confirm scalability under typical load conditions. Security testing will check login validation, session handling, and role-based access control.
+3.3.5 Deployment
+After successful testing, deployment will begin with uploading system files to a live web server and configuring the MySQL database. Training materials and user manuals will be provided to administrators and HR staff to aid in adoption. Rollout will follow a staged approach, starting with core functionalities and expanding to optional modules. System access will be secure login credentials.
+3.3.6 Maintenance
+Maintenance will ensure the system stays functional, secure, and up to date. It will include periodic updates for bug fixes, security patches, and feature enhancements. A version control system will manage updates to maintain system integrity. Database backups will be scheduled as often as possible, and system health will be monitored using server logs and automated scripts. Feedback mechanisms will remain active so users can report issues. Maintenance windows will be scheduled during off-peak hours to minimize disruption.
+
+3.4 Deliverables
+The proposed Web-Based Automated Payroll System will consist of clearly defined modules that serve different user roles, with embedded security and session management features. The deliverables ensure that the system is secure, easy to maintain, and user-friendly for both technical and non-technical users.
+3.4.1 System Modules
+The system will consist of the following key modules:
+i.	Employee Management Module: Stores and keeps employee personal records, job titles, bank accounts, and payroll groups.
+ii.	Payroll Processing Module: Automatically calculates salaries, deductions, allowances, and payslips.
+iii.	Attendance Module: Includes attendance records to influence payroll results.
+iv.	Report Generation Module: Produces monthly payroll reports and tax returns.
+
+3.4.2 Users modules
+Different users will use the system based on defined access levels:
+i.	Administrator: Full access to manage users, approve salaries, edit system settings, and print financial reports.
+ii.	Employee /Self-Service module: Can log in to download/view payslips and request changes of personal details.
+iii.	HR Officer: Keeps employee records, inputs attendance, and confirms payroll calculations.
+
+3.4.3 Security and Authentication
+For keeping confidential payroll data secure, the system will employ strict security measures:
+i.	Secure Login: Permits only authorized users to log in to the system.
+ii.	Role-Based Access Control: Limits functionality access based on user roles.
+iii.	Session Persistence and Timeout: Maintains user sessions for active sessions.
+
+3.4.4 Overall System Architecture
+The system will be designed on a 3-tier architecture, consisting of:
+i.	Presentation Layer: Front-end interface developed with HTML and CSS to communicate with the user.
+ii.	Application Layer: PHP back-end to handle business logic and secure communication between database and user input.
+iii.	Data Layer: MySQL database to store data, retrieve data, and run queries.
+
+3.5 Ethical Considerations
+The proposed payroll system will prioritize protecting user privacy by securely storing and encrypting all sensitive information. Users involved in testing will give their consent, knowing how their data will be used. The system will be designed to be accessible to everyone, including people with disabilities, by using clear layouts and user-friendly navigation. It will also promote fairness by avoiding any form of bias in how users are treated or how data is processed. 
+
+
+
+
+
+
+
+Chapter 4: System Analysis and Design
+4.1 Introduction
+This chapter outlines the system analysis and design process used in the development of the Web-Based Automated Payroll System. It includes a comprehensive requirement analysis based on literature review followed by modelling diagrams that illustrate system functionality and behaviour. The goal is to ensure the system supports secure, accurate, and efficient payroll processing. Both functional and non-functional requirements were carefully considered to align the system with user expectations and organizational needs. Additionally, the use of design tools such as data flow diagrams and entity-relationship models provided a clear blueprint for implementation.
+4.2 Requirement Analysis
+This system addresses the inefficiencies commonly found in traditional payroll processes within small and medium-sized enterprises (SMEs). Key challenges include manual salary calculations, disjointed leave and attendance tracking, and the absence of centralized payroll reporting. To accurately capture user needs, several online publications were studied with reference to HR personnel and finance managers across various SMEs. These primary data collection methods were complemented by an extensive literature review, which helped identify persistent pain points in existing payroll systems. The findings guided the system's design to ensure it effectively responds to real-world operational gaps.
+4.2.1 Functional Requirements
+The table below summarizes the key functional requirements based on system roles:
+Table 4.2.1 Functional Requirements
+	Employee	HR officer	Admin	Finance officer
+Input
+	Register into the system.
+Login into the system.
+Update personal info.
+Request for leave.
+Submit bank details
+Logout of the system.	Login into the system.
+Enter attendance and leave data. Register new employees.
+Input salary and benefits information.
+Logout of the system.	Login into the system.
+Configure system settings.
+Create and assign user roles.
+Set tax rules and system thresholds.
+Logout of the system.	Login into the system.
+Configure system settings.
+Create and assign user roles.
+Set tax rules and system thresholds.
+Logout of the system.
+Output	View payslips. 
+Track leave status. 
+View tax deductions	Generate employee salary slips. 
+View leave balances.	Export payroll data.
+Access full audit logs. 
+View data usage reports.	View financial summaries.
+ Access employee cost analytics. 
+
+Reporting	View monthly pay summary.
+Leave balance report.	Track employee performance. Generate payroll history.	Create error and performance logs	View budget vs. actual payroll. Analyse department-wise spend.
+System
+roles	View-only access to own data. 
+Initiate requests. Change password	Edit employee details. 
+Access payroll module.
+Initiate payroll runs.	Full system access. 
+Approve payroll runs. 
+	Read-only access 
+Approve budgets.
+Override payroll in special cases
+
+
+4.2.2 Non-Functional Requirements
+Table 4.2.2 Non-Functional Requirements
+Requirement		Description
+Availability		The system will be accessible via web browser on desktop or mobile at any time by authorized users with valid login credentials.
+Reliability		Automated daily backups and robust error handling will ensure consistent performance and prevent data loss under high usage or system failures.
+Portability		The system will be compatible with multiple operating systems (Windows, Linux, macOS), allowing access across devices and environments.
+Maintainability		The system will follow a modular architecture with clear documentation to allow easy troubleshooting, upgrades, and future expansion by IT personnel.
+
+
+
+
+
+
+
+4.3: Diagrams
+                                                                                                                                                                                                    4.3.1 Use-case diagram
+`` 
+Figure 4.6.1 Use-case diagram
+
+
+
+
+
+
+
+4.3.2 Class Diagram
+ 
+Figure 4.3.2 Class Diagram
+
+
+
+
+
+
+4.3.3 Entity Relationship Diagram
+ 
+Figure 4.3.3 Entity Relationship Diagram
+
+
+4.3.4 Database Schema
+ 
+Figure 4.3.4 Database Schema
+
+
+
+
+
+
+
+
+
+
+
+Chapter 5: Development and testing
+5.1 Introduction
+This chapter outlines the development and testing processes of the Web-Based Automated Payroll System. It details the technologies, tools, and frameworks employed, along with the setup of the development environment. The chapter also explains the methodology used to ensure the system meets user requirements effectively. Furthermore, it highlights the roles and interactions of key stakeholders within the system and describes how both functional and non-functional requirements were successfully addressed. Finally, it discusses the challenges faced during implementation and the strategies used to overcome them.
+5.2 Setup Description
+The Web-Based Automated Payroll System was developed to resolve persistent challenges encountered by small and medium-sized enterprises (SMEs) in handling salary computation, attendance tracking, and payroll reporting. Conventional manual methods are often error-prone, time-consuming, and lack comprehensive reporting capabilities. This system automates key payroll processes, allowing for centralized management and greater operational efficiency. It also enhances accuracy in salary and tax calculations while reducing administrative overhead. Additionally, the implementation of role-based access ensures that users interact with the system according to their responsibilities, thereby improving security and accountability.
+The system was designed using a modular, role-specific architecture, where each stakeholder's duties were clearly defined and embedded into both the user interface and backend logic. This structured approach enhances accountability, reinforces data security, and improves the overall efficiency of payroll operations. By isolating responsibilities across different modules, the system also facilitates easier maintenance, scalability, and adaptability to organizational changes.
+Leave management was intentionally excluded from this implementation, as it is less relevant for SMEs that primarily employ casual workers. This decision allowed the development to prioritize more critical features such as salary computation, attendance tracking, user access control, and payroll reporting. The system includes a variety of reports designed to support organizational decision-making. These include Payslip Reports generated by the HR officer for individual employees, Payroll Summaries for use by both HR and Finance departments, and Audit and System Logs accessible to the System Administrator for monitoring and security purposes. This reporting structure ensures transparency, accountability, and informed decision-making across departments.
+5.2.1 Solution Set Up
+The technology and tools used in creation of the system is as follows;
+Front End – HTML and JavaScript
+Back End – PHP
+Database – MySQL
+Development Environment – XAMPP
+IDE – Visual Studio Code
+Language - PHP, JavaScript, SQL
+
+5.2.2 Stakeholder Interaction
+The table below details how each respective stakeholder has the functional requirements implemented;
+Table 4 Stakeholder Interaction
+Stakeholder	How functional requirement is implemented
+Employee	A secure employee dashboard allows users to log in, view personalized payslips, and update personal/bank details through form-based inputs.
+HR officer	The HR panel includes modules for employee registration, attendance logging, automated payroll computation, and payslip generation for each pay cycle.
+Supervisor	A streamlined attendance form enables supervisors to enter daily attendance and overtime data, which integrates with the payroll module.
+Finance Officer	The finance dashboard provides payroll review and approval tools, as well as report generation features including departmental and summary analytics.
+System administrator	A full-featured admin control panel enables user role management, configuration of tax rules, system-wide settings, and activity log monitoring.
+
+
+Non-Functional Requirements Implementation
+Table 5 Non-Functional Requirements Implementation
+Requirement	How it is implemented
+Availability	The system is web-based and accessible 24/7 via modern browsers to authorized users
+Reliability	Integrated with error handling, user validation, and regular data backups
+Portability	Broad accessibility on portable devices eg mobile phones and laptops
+Maintainability	Built using modular architecture with clean code and developer documentation
+
+5.2.3 Challenges
+During development, challenges encountered included; 
+•	Authentication Conflicts: At one stage, users with multiple roles (e.g., Supervisor and Employee) had conflicting access privileges. This was resolved by enforcing role-based session management and isolating user tasks.
+•	 Session Timeout Conflicts: Users were frequently logged out during long payroll processing sessions, causing data loss. This was resolved by implementing session persistence and auto-save functionality.
+•	 Password Policy Conflicts: Users were creating weak passwords that violated security requirements. This was resolved by implementing password strength requirements and regular password change policies.
+
+5.3 Testing
+For the Payroll System project, a combination of manual and automated testing methods was employed to validate that the system fulfilled its functional requirements. The testing efforts primarily concentrated on key features, including employee records management, attendance monitoring, payroll computation, and handling of leave requests.
+Tools Used
+•	Web Browser (Google Chrome): For manual UI and workflow testing.
+•	XAMPP: To provide the local server environment (Apache, MySQL, PHP).
+•	PHPUnit: For automated backend testing (where applicable).
+•	Browser Developer Tools: For inspecting elements, console errors, and network activity.
+
+
+
+
+
+
+5.3.1 Test Cases
+Each test case is represented in the table below, covering the type of test, reason, environment, test tool, test data, expected and actual results, and pass/fail status. Screenshots are referenced as appendices.
+Table 6 Test Cases
+Test ID	Test001	Test002	Test003	Test004
+Type of test	Functional,
+Manual	Functional,
+Manual	Functional,
+Manual	Functional,
+Manual
+Functionality	User login (index.php)
+	Add New Employee (employee.php)
+	Mark Attendance      (attendance.php, clock.php)	Payroll Generation (finpayroll.php)
+
+Reason	To verify that only registered users can access the system
+	To ensure new employees can be added to the system
+	To verify employees can mark their attendance
+	To ensure payroll is calculated correctly based on attendance and salary
+Test environment	Windows 10, XAMPP, Chrome Browser
+	Windows 10, XAMPP, Chrome Browser	Windows 10, XAMPP, Chrome Browser
+	Windows 10, XAMPP, Chrome Browser
+Test tool	Manual (Browser), XAMPP	Manual (Browser), XAMPP	Manual (Browser), XAMPP
+	Manual (Browser), XAMPP
+
+Test data	Username: admin, Password: admin123	Name: John Doe, Position: Accountant, Salary: 50000
+	Employee ID: 101, Date: 2024-06-01, Time: 09:00 AM	Employee: John Doe, Days Present: 22, Salary: 50000
+
+Expected result	User is redirected to   dashboard.php upon successful login
+	Employee record is  saved and visible in the employee list	Attendance is recorded and visible  in the attendance list
+	Payroll is generated with correct amount
+Actual result	User successfully        redirected to dashboard.php	Employee record     appears in the list	Attendance                successfully recorded	Payroll generated as expected
+Pass/Fail	Pass	Pass	Pass	Pass
+Evidence	See Appendix A1 for screenshot	See Appendix A2 for screenshot	See Appendix A3 for screenshot	See Appendix A4 for screenshot
+
+
+
+
+
+
+
+Chapter 6: Conclusions and Recommendations
+
+6.1 Conclusion
+This project aimed to tackle the recurring challenges and inaccuracies inherent in manual payroll processes within small and medium-sized enterprises (SMEs), especially in developing regions. The objective was to develop a web-based automated payroll system that offers secure authentication, uninterrupted user sessions, and smooth integration with existing HR and accounting systems.
+The key finding of the project is that a thoughtfully designed web-based payroll solution can greatly reduce payroll-related errors, support compliance with labour and tax regulations, and boost overall efficiency. By automating functions such as salary computation, deductions, and tax processing, the system lowers the risk of human error and guarantees timely, precise disbursements. Additionally, its intuitive interface and role-based access enhance both user experience and data protection.
+In comparison with related studies and existing systems (e.g., Ahmed et al., 2023; Heart, 2022), the solution developed in this project demonstrates enhanced session management and delivers a more user-friendly, affordable platform tailored to the needs of SMEs. Nonetheless, certain limitations persist, the continued requirement for user training and proactive cybersecurity practices.
+Overall, the project contributes to society by providing SMEs with a practical, affordable tool to streamline payroll operations, reduce errors, and improve employee satisfaction. It also lays the groundwork for future enhancements, such as mobile app development and advanced data analytics.
+
+6.2 Recommendations.
+i) Multi-Currency Support: Implement support for multiple currencies and exchange rate management for international companies with employees in different countries.
+ii) Multi-Factor Authentication: Implement biometric authentication, hardware tokens, and SMS verification for enhanced security beyond password-based login.
+iii) Third-Party Service Integration: Integrate with external services like background verification, credit checks, and professional certification validation.
+iv) Document Management: Integrate document management capabilities for storing and managing employee contracts, tax forms, and compliance documents.
+
+Appendices.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ References
+Aina, A., & Odun-Ayo, I. (2025). Development of a Cloud-Based Payroll Management System. https://doi.org/10.48550/ARXIV.2502.16321
+Automated Payroll Processing Software. (n.d.). ResearchGate. Retrieved May 22, 2025, from https://www.researchgate.net/publication/383526909_Automated_Payroll_Processing_Software
+Fred, T. (n.d.). Privacy and Data Protection Compliance in AI-Driven SME Platforms.
+Wachanga, A. (n.d.). Adoption of Cloud Computing by SMEs in Kenya. 01(09).
+Adebayo, T. (2023). Payroll and Leave Management System.
+Ahmed, A. M., Mohammed, C. N., & Ahmad, A. M. (2023). Web-based payroll management system: Design, implementation, and evaluation. Journal of Electrical Systems and Information Technology, 10(1), 17. https://doi.org/10.1186/s43067-023-00082-5
+Heart, S., & Bolu, T. (2022). Real-Time Payroll Calculation System.
+Hikmah, I. N., & Muqorobin, M. (2020). Employee Payroll Information System on Company Web-Based Consultant Engineering Services. International Journal of Computer and Information System (IJCIS), 1(1), 27–30. https://doi.org/10.29040/ijcis.v1i2.11
+
+
+
+
+
+

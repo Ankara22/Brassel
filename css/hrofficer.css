@@ -1,0 +1,205 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout and container styles inspired by employee.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.4;
+  background-color: #f9f9ff;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 20px 20px 20px;
+}
+
+.metrics-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.metric-card {
+  flex: 1 1 220px;
+  max-width: 320px;
+  min-width: 220px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px 24px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.metric-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.metric-card .value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.metric-card .subtext {
+  font-size: 0.95rem;
+  color: #888;
+}
+
+.metric-card .value.green {
+  color: #2ecc71;
+}
+.metric-card .value.orange {
+  color: #e67e22;
+}
+.metric-card .value.purple {
+  color: #9b59b6;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  border-top: 5px solid #4a00e0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px 15px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header .container { padding: 0; margin: 0; width: 100%; display: contents; }
+.header-left { display: flex; align-items: center; }
+.header-right { display: flex; align-items: center; gap: 15px; margin-left: auto; }
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo {
+  color: #4a00e0;
+}
+
+.welcome {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.logout-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(186, 77, 77, 0.808);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.logout-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Navigation */
+.nav {
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a.active {
+  background-color: #e0f7ff;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .metrics-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .metrics-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+  .dashboard-container {
+    gap: 20px;
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .metric-card {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .dashboard-container {
+    padding: 10px 2px;
+  }
+}
+
+/* --- FORCE HEADER LAYOUT OVERRIDE --- */
+header.header, .header {
+  width: 100% !important;
+  border-top: 5px solid #4a00e0 !important;
+  background: #fff !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 20px 40px 15px 40px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  margin: 0 !important;
+}
+.header-left {
+  display: flex !important;
+  align-items: center !important;
+}
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  margin-left: auto !important;
+}
